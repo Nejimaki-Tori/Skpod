@@ -136,7 +136,7 @@ void relax() {
 
     //MPI_Barrier(MPI_COMM_WORLD); - no need
     //MPI_Reduce(&epsTmp, &eps, 1 , MPI_DOUBLE, MPI_MAX, 0, MPI_COMM_WORLD); //reduce all
-	MPI_Allreduce(&epsTmp, &eps, 1 , MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD); // use this
+    MPI_Allreduce(&epsTmp, &eps, 1 , MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD); // use this
     //MPI_Bcast(&eps, 1, MPI_DOUBLE, 0, MPI_COMM_WORLD); - no need
 }
 
@@ -152,7 +152,7 @@ void verify() {
             }
     //MPI_Barrier(MPI_COMM_WORLD); - no need
     //MPI_Reduce(&sTmp, &s, 1 , MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD); - no need
-	MPI_Allreduce(&sTmp, &s, 1 , MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD); // use this
+    MPI_Allreduce(&sTmp, &s, 1 , MPI_DOUBLE, MPI_MAX, MPI_COMM_WORLD); // use this
     if (!myrank) {
         printf("  S = %f\n", s);
     }
