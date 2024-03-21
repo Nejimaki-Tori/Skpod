@@ -71,7 +71,7 @@ void relax() {
             int i1 = newi - iam;
 #pragma omp for reduction(max:eps)
             for (int j = 1; j <= N - 2; ++j) {
-				if ((i1 > 0) && (i1 < N - 1)) { // for optimization it is here
+		if ((i1 > 0) && (i1 < N - 1)) { // for optimization it is here
                 for (int k = 1; k <= N - 2; ++k) {                 
                         double e = A[i1][j][k]; // and not here
                         A[i1][j][k] =
